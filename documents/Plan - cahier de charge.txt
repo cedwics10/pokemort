@@ -1,8 +1,8 @@
 * Contexte et Problématique
-* Public Cible
-* Résumé des Fonctionnalités Principales
-* Détail des Fonctionnalités
-* Design et Ergonomie
-* Conception Merise
+* Public cible
+* Résumé des fonctionnalités Principales
+* Détail des fonctionnalités
+* Design et ergonomie
+* Conception merise
 * Modélisation UML
-* Contraintes Techniques
+* Contraintes techniques
