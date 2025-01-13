@@ -14,7 +14,7 @@ usecase "Déclencher un objet" as OBJECT
 usecase "Tenter de capturer un Pokémon" as CATCH
 usecase "Prendre la fuite" as FLEE
 usecase "Calculer les dommages" as DAMAGES
-usecase "Calculer l'issu du combat" as OUTCOME
+usecase "Calculer l'issue du combat" as OUTCOME
 
 rectangle "pokemort" {
     dresseur - START

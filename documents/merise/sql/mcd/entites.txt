@@ -1,0 +1,18 @@
+-	Partie
+-	Joueur
+-	Type
+-	Badge
+-	Objet
+
+-	Pokemon
+-	Talent
+-	Attaque
+-       Priorite
+
+-	BaseEffet
+-	Effet
+
+-	Strategie
+-	Ennemi
+
+-	Climat

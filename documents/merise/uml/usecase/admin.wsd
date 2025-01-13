@@ -29,6 +29,7 @@ rectangle "administration pokemort" {
     administrateur -- AUTH
     EDIT ..> AUTH : include
     VIEW ..> AUTH : include
+    DELETE ..> AUTH : include
     TRAINER ..> EDIT : extends
     POKEMON ..> EDIT : extends
     ADVENTURE ..> EDIT : extends
