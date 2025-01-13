@@ -1,0 +1,214 @@
+Partie
+- par_id
+- par_actif
+- par_score
+- par_statut
+- par_debut
+- par_fin
+
+Combat
+- com_id
+- com_numero
+- com_nom
+
+Membre
+- mem_id
+- mem_pseudo
+- mem_mdp
+- mem_nom
+- mem_photo
+
+Personnage
+- per_id
+- per_photo
+- per_jouable
+
+Type 
+- typ_id
+- typ_nom
+- typ_logo
+
+Badge
+- bad_id
+- bad_tyhpe
+- bad_image
+- bad_ordre
+
+Objet
+- obj_id
+- obj_nom
+- obj_image
+
+Statut
+- sta_id
+- sta_pokemon
+
+Pokemon
+- pok_ud
+- pok_nom
+- pok_image
+- pok_miniature
+- pok_base_pv
+- pok_base_attaque
+- pok_base_defense
+- pok_base_attaque_speciale
+- pok_base_defense_speciale
+- pok_base_vitesse
+
+Talent
+- tal_id
+- tal_nom
+- tal_fois
+
+Attaque
+- att_id
+- att_nom
+- att_puissance
+- att_precision
+- att_speciale
+
+BaseEffet
+- bas_id
+- bas_colonne
+- bas_precision
+- bas_degats
+- bas_affecte_ennemi
+- bas_affecte_pokemon
+
+Effet
+- eff_id
+- eff_nom
+- eff_description
+
+Strategie
+- str_id
+- str_nom
+
+Ennemi
+- enn_id
+- enn_type
+- enn_nom
+- enn_phrase_debut
+- enn_phrase_victoire
+- enn_phrase_defaite
+- enn_strategie
+
+Climat
+- cli_id
+- cli_nom
+
+---------------------------------------
+
+Recompenser
+- rec_badge
+- rec_partie
+
+Initier
+- ini_partie
+- ini_membre
+
+Incarner
+- inc_partie
+- inc_personnage
+
+Delivrer
+- del_ennemi
+- del_badge
+
+Offrir
+- off_ennemi
+- off_objet
+- off_examplaires
+
+Copier
+- cop_ennemi
+- cop personnage
+
+Influencer
+- inf_id
+- inf_confronter
+- inf_effet
+
+Confronter
+- con_id
+- con_combat
+- con_ennemi
+- con_climat
+
+EstConfronte
+- est_id
+- est_personnage
+- est_confronter
+- con_climat
+
+Organiser
+- org_id
+- org_climat
+- org_ennemi
+- org_personnage
+- org_combat
+
+Decomposer
+- dec_id
+- dec_effet
+- dec_bas_effet
+
+Appliquer
+- app_id
+- app_objet
+- app_effet
+- app_port
+- app_usage
+
+Effectuer
+- eff_id
+- eff_talent
+- eff_effet
+
+Declencher
+- dec_id
+- dec_attaque
+- dec_effet
+- dec_probabilite
+
+Craindre
+- cra_id
+- cra_type_un
+- cra_type_deux
+- cra_avoir_effet
+- cra_signe 
+
+EtreType
+- etr_id
+- etr_pokemon
+- etre_type
+
+PeutApprendre
+- peu_id
+- peu_pokemon
+- peu_attaque
+- peu_niveau
+
+VaEvoluer
+- vae_id
+- vae_preevolution
+- vae_evolution
+
+Détenir
+- det_id
+- det_personnage
+- det_objet
+- det_quantite
+
+ConstituerEquipe
+- con_id
+- con_personnage
+- con_objet
+- con_pokemon
+- con_talent
+- con_statut
+
+AAppris
+- aap_id
+- app_constituer_equipe 
+- aap_attaque
