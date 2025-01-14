@@ -118,7 +118,7 @@ Combattre
 - com_id
 - com_personnage
 - com_ennemi
-- com_personnage ("cloné")
+- com_personnage
 - com_climat
 
 SortCombattre
@@ -207,7 +207,6 @@ ConstituerEquipe
 - con_niveau
 - con_pv_restants
 - con_ordre
-- con_talent
 - con_experience
 - con_shiny
 - con_personnage
