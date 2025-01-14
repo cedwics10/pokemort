@@ -194,9 +194,20 @@ Détenir
 ConstituerEquipe
 - con_id
 - con_personnage
-- con_objet
 - con_pokemon
+- con_objet
 - con_talent
+- con_iv_attaque
+- con_iv_defense
+- con_iv_attaque_speciale
+- con_iv_defense_speciale
+- con_iv_vitesse
+- con_niveau
+- con_pv_restants
+- con_ordre
+- con_talent
+- con_experience
+- con_shiny
 - con_statut
 
 AAppris
