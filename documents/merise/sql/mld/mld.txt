@@ -71,7 +71,7 @@ BaseEffet
 - bas_id
 - bas_colonne
 - bas_precision
-- bas_degats
+- bas_degat
 - bas_affecte_ennemi
 - bas_affecte_pokemon
 
@@ -92,6 +92,7 @@ Ennemi
 - enn_phrase_victoire
 - enn_phrase_defaite
 - enn_strategie
+- enn_personnage
 
 Climat
 - cli_id
@@ -100,53 +101,43 @@ Climat
 ---------------------------------------
 
 Recompenser
+- rec_id
 - rec_badge
 - rec_partie
+- rec_date
 
 Initier
+- ini_id
 - ini_partie
 - ini_membre
 
 Incarner
+- inc_id
 - inc_partie
 - inc_personnage
 
 Delivrer
+- del_id
 - del_ennemi
 - del_badge
 
 Offrir
+- off_id
 - off_ennemi
 - off_objet
 - off_examplaires
 
-Copier
-- cop_ennemi
-- cop personnage
-
 Influencer
 - inf_id
-- inf_confronter
 - inf_effet
+- inf_combat
 
-Confronter
-- con_id
-- con_combat
-- con_ennemi
-- con_climat
-
-EstConfronte
-- est_id
-- est_personnage
-- est_confronter
-- con_climat
-
-Organiser
-- org_id
-- org_climat
-- org_ennemi
-- org_personnage
-- org_combat
+Combat
+- com_id
+- com_personnage
+- com_personnage_ennemi (copie)
+- com_ennemi
+- com_climat
 
 Decomposer
 - dec_id
