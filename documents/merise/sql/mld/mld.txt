@@ -1,15 +1,12 @@
 Partie
 - par_id
+- par_membre
+- par_personnage
 - par_actif
 - par_score
 - par_statut
 - par_debut
 - par_fin
-
-Combat
-- com_id
-- com_numero
-- com_nom
 
 Membre
 - mem_id
@@ -20,17 +17,18 @@ Membre
 
 Personnage
 - per_id
+- per_nom
 - per_photo
 - per_jouable
+- per_copie
 
-Type 
+Type
 - typ_id
 - typ_nom
 - typ_logo
 
 Badge
 - bad_id
-- bad_tyhpe
 - bad_image
 - bad_ordre
 
@@ -40,16 +38,16 @@ Objet
 - obj_image
 
 Statut
-- sta_id
-- sta_pokemon
+sta_id
+sta_nom
 
 Pokemon
-- pok_ud
+- pok_id
 - pok_nom
 - pok_image
 - pok_miniature
-- pok_base_pv
-- pok_base_attaque
+- Pok_base_pv
+- pok_base_attaqie
 - pok_base_defense
 - pok_base_attaque_speciale
 - pok_base_defense_speciale
@@ -65,13 +63,12 @@ Attaque
 - att_nom
 - att_puissance
 - att_precision
-- att_speciale
 
 BaseEffet
 - bas_id
 - bas_colonne
 - bas_precision
-- bas_degat
+- bas_degats
 - bas_affecte_ennemi
 - bas_affecte_pokemon
 
@@ -86,6 +83,7 @@ Strategie
 
 Ennemi
 - enn_id
+- enn_ordre
 - enn_type
 - enn_nom
 - enn_phrase_debut
@@ -98,76 +96,73 @@ Climat
 - cli_id
 - cli_nom
 
----------------------------------------
+Combat
+- com_id
+- com_ennemi
+- com_climat
 
 Recompenser
 - rec_id
-- rec_badge
-- rec_partie
 - rec_date
-
-Initier
-- ini_id
-- ini_partie
-- ini_membre
-
-Incarner
-- inc_id
-- inc_partie
-- inc_personnage
+- rec_partie
+- rec_badge
 
 Delivrer
 - del_id
 - del_ennemi
 - del_badge
 
-Offrir
+Ofrrir
 - off_id
 - off_ennemi
 - off_objet
-- off_examplaires
+- off_quantite
 
-Influencer
-- inf_id
-- inf_effet
-- inf_combat
-
-Combat
+Combattre
 - com_id
 - com_personnage
-- com_personnage_ennemi (copie)
 - com_ennemi
+- com_personnage ("cloné")
 - com_climat
+
+SortCombattre
+- sor_id
+- sor_effet
+- sor_combattre
+- sor_duree
 
 Decomposer
 - dec_id
 - dec_effet
-- dec_bas_effet
+- dec_base_effet
 
-Appliquer
+Appliquer 
 - app_id
-- app_objet
 - app_effet
-- app_port
-- app_usage
+- app_objet
+- app_ordre
 
-Effectuer
-- eff_id
-- eff_talent
-- eff_effet
+Exprimer
+- exp_id
+- exp_talent
+- exp_effet
 
 Declencher
 - dec_id
 - dec_attaque
 - dec_effet
-- dec_probabilite
+
+Engendrer
+- eng_id
+- eng_statut
+- eng_effet
 
 Craindre
 - cra_id
 - cra_type_un
 - cra_type_deux
-- cra_avoir_effet
-- cra_signe 
+- cra_effet
+- cra_signe
 
 EtreType
 - etr_id
@@ -182,10 +177,17 @@ PeutApprendre
 
 VaEvoluer
 - vae_id
-- vae_preevolution
+- vae_niveau
+- vae_pokemon
 - vae_evolution
 
-Détenir
+Exprimer
+- exp_id
+- exp_pokemon
+- exp_talent
+- exp_probabilite
+
+Detenir
 - det_id
 - det_personnage
 - det_objet
@@ -193,24 +195,22 @@ Détenir
 
 ConstituerEquipe
 - con_id
-- con_personnage
-- con_pokemon
 - con_objet
 - con_talent
+- con_statut
+- con_attaque_un
+- con_attaque_deux
+- con_attaque_trois
+- con_attaque_quatre
 - con_iv_attaque
 - con_iv_defense
 - con_iv_attaque_speciale
 - con_iv_defense_speciale
-- con_iv_vitesse
+- con_iv_vitesse, 
 - con_niveau
 - con_pv_restants
 - con_ordre
 - con_talent
 - con_experience
 - con_shiny
-- con_statut
-
-AAppris
-- aap_id
-- app_constituer_equipe 
-- aap_attaque
+- con_personnage
