@@ -1,0 +1,226 @@
+Table Partie {
+  par_id int [pk]
+  par_membre int [ref: > Membre.mem_id]
+  par_personnage int [ref: > Personnage.per_id]
+  par_actif boolean
+  par_score int
+  par_statut int [ref: > Statut.sta_id]
+  par_debut datetime
+  par_fin datetime
+}
+
+Table Membre {
+  mem_id int [pk]
+  mem_pseudo varchar
+  mem_mdp varchar
+  mem_nom varchar
+  mem_photo varchar
+}
+
+Table Personnage {
+  per_id int [pk]
+  per_nom varchar
+  per_photo varchar
+  per_jouable boolean
+  per_copie boolean
+}
+
+Table Type {
+  typ_id int [pk]
+  typ_nom varchar
+  typ_logo varchar
+}
+
+Table Badge {
+  bad_id int [pk]
+  bad_type varchar
+  bad_ordre int
+}
+
+Table Objet {
+  obj_id int [pk]
+  obj_nom varchar
+  obj_image varchar
+}
+
+Table Statut {
+  sta_id int [pk]
+  sta_nom varchar
+}
+
+Table Pokemon {
+  pok_id int [pk]
+  pok_numero int
+  pok_nom varchar
+  pok_image varchar
+  pok_miniature varchar
+  pok_base_pv int
+  pok_base_attaqie int
+}
+
+Table Talent {
+  tal_id int [pk]
+  tal_nom varchar
+  tal_fois int
+}
+
+Table Attaque {
+  att_id int [pk]
+  att_nom varchar
+  att_puissance int
+  att_precision int
+}
+
+Table BaseEffet {
+  bas_id int [pk]
+  bas_colonne varchar
+  bas_precision int
+  bas_degats int
+  bas_affecte_ennemi boolean
+  bas_affecte_pokemon boolean
+}
+
+Table Effet {
+  eff_id int [pk]
+  eff_nom varchar
+  eff_description varchar
+}
+
+Table Strategie {
+  str_id int [pk]
+  str_nom varchar
+}
+
+Table Ennemi {
+  enn_id int [pk]
+  enn_ordre int
+  enn_type varchar
+  enn_nom varchar
+  enn_strategie int [ref: > Strategie.str_id]
+  enn_personnage int [ref: > Personnage.per_id]
+}
+
+Table Climat {
+  cli_id int [pk]
+  cli_nom varchar
+}
+
+Table Recompenser {
+  rec_id int [pk]
+  rec_date datetime
+  rec_partie int [ref: > Partie.par_id]
+  rec_badge int [ref: > Badge.bad_id]
+}
+
+Table Delivrer {
+  del_id int [pk]
+  del_ennemi int [ref: > Ennemi.enn_id]
+  del_badge int [ref: > Badge.bad_id]
+}
+
+Table Offrir {
+  off_id int [pk]
+  off_ennemi int [ref: > Ennemi.enn_id]
+  off_objet int [ref: > Objet.obj_id]
+  off_quantite int
+}
+
+Table Combattre {
+  com_id int [pk]
+  com_personnage int [ref: > Personnage.per_id]
+  com_ennemi int [ref: > Ennemi.enn_id]
+  com_personnage_clone int [ref: > Personnage.per_id]
+  com_climat int [ref: > Climat.cli_id]
+}
+
+Table SortCombattre {
+  sor_id int [pk]
+  sor_effet int [ref: > Effet.eff_id]
+  sor_combattre int [ref: > Combattre.com_id]
+  sor_duree int
+}
+
+Table Decomposer {
+  dec_id int [pk]
+  dec_effet int [ref: > Effet.eff_id]
+  dec_base_effet int [ref: > BaseEffet.bas_id]
+}
+
+Table Appliquer {
+  app_id int [pk]
+  app_effet int [ref: > Effet.eff_id]
+  app_objet int [ref: > Objet.obj_id]
+  app_ordre int
+}
+
+Table Exprimer {
+  exp_id int [pk]
+  exp_talent int [ref: > Talent.tal_id]
+  exp_effet int [ref: > Effet.eff_id]
+}
+
+Table Declencher {
+  dec_id int [pk]
+  dec_attaque int [ref: > Attaque.att_id]
+  dec_effet int [ref: > Effet.eff_id]
+}
+
+Table Engendrer {
+  eng_id int [pk]
+  eng_statut int [ref: > Statut.sta_id]
+  eng_effet int [ref: > Effet.eff_id]
+}
+
+Table Craindre {
+  cra_id int [pk]
+  cra_type_un int [ref: > Type.typ_id]
+  cra_type_deux int [ref: > Type.typ_id]
+  cra_effet int [ref: > Effet.eff_id]
+  cra_signe varchar
+}
+
+Table EtreType {
+  etr_id int [pk]
+  etr_pokemon int [ref: > Pokemon.pok_id]
+  etre_type int [ref: > Type.typ_id]
+}
+
+Table PeutApprendre {
+  peu_id int [pk]
+  peu_pokemon int [ref: > Pokemon.pok_id]
+  peu_attaque int [ref: > Attaque.att_id]
+  peu_niveau int
+}
+
+Table VaEvoluer {
+  vae_id int [pk]
+  vae_niveau int
+  vae_pokemon int [ref: > Pokemon.pok_id]
+  vae_evolution int [ref: > Pokemon.pok_id]
+}
+
+Table SaitExprimer {
+  exp_id int [pk]
+  exp_pokemon int [ref: > Pokemon.pok_id]
+  exp_talent int [ref: > Talent.tal_id]
+}
+
+Table Detenir {
+  det_id int [pk]
+  det_personnage int [ref: > Personnage.per_id]
+  det_objet int [ref: > Objet.obj_id]
+  det_quantite int
+}
+
+Table ConstituerEquipe {
+  con_id int [pk]
+  con_objet int [ref: > Objet.obj_id]
+  con_talent int [ref: > Talent.tal_id]
+  con_statut int [ref: > Statut.sta_id]
+  con_attaque_un int [ref: > Attaque.att_id]
+  con_attaque_deux int [ref: > Attaque.att_id]
+  con_attaque_trois int [ref: > Attaque.att_id]
+  con_attaque_quatre int [ref: > Attaque.att_id]
+  con_talent int [ref: > Talent.tal_id]
+  con_personnage int [ref: > Personnage.per_id]
+}

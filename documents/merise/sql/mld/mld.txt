@@ -43,6 +43,7 @@ sta_nom
 
 Pokemon
 - pok_id
+- pok_numero
 - pok_nom
 - pok_image
 - pok_miniature
@@ -131,7 +132,7 @@ Decomposer
 - dec_effet
 - dec_base_effet
 
-Appliquer 
+Appliquer
 - app_id
 - app_effet
 - app_objet
@@ -151,6 +152,8 @@ Engendrer
 - eng_id
 - eng_statut
 - eng_effet
+
+
 
 Craindre
 - cra_id
@@ -176,11 +179,10 @@ VaEvoluer
 - vae_pokemon
 - vae_evolution
 
-Exprimer
+SaitExprimer
 - exp_id
 - exp_pokemon
 - exp_talent
-- exp_probabilite
 
 Detenir
 - det_id
