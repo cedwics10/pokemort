@@ -1,39 +1,40 @@
 @startuml
-
 left to right direction
+skinparam packageStyle rectangle
 
-actor dresseur
-actor ennemi
+actor visiteur
+actor membre
 
-usecase "S'auhetnifier" as AUTH
-usecase "Demarrrer aventure" as START
-usecase "Démarrer un combat" as BATTLE
-usecase "Lancer une attaque" as ATTACK
-usecase "Choisir une action" as LAUNCH
-usecase "Déclencher un objet" as OBJECT
-usecase "Tenter de capturer un Pokémon" as CATCH
-usecase "Prendre la fuite" as FLEE
-usecase "Calculer les dommages" as DAMAGES
-usecase "Calculer l'issue du combat" as OUTCOME
+membre --|> visiteur
 
-rectangle "pokemort" {
-    dresseur - START
-    START ...> AUTH : include
-    START --- BATTLE
+rectangle "POKÉMORT" {
 
-    ennemi - BATTLE
+    usecase "S'auhetnifier" as AUTH
+    usecase "Demarrrer aventure" as START
+    usecase "Consulter la liste des pokémons" as POKEDEX
 
-    LAUNCH --> BATTLE : include
+    usecase "Démarrer un combat" as BATTLE
 
-    OBJECT ..> LAUNCH : extends
-    CATCH ..> LAUNCH : extends
-    FLEE ..> LAUNCH : extends
+    usecase "Choisir une action" as LAUNCH
 
-    ATTACK ..> LAUNCH : include
+    usecase "Lancer une attaque" as ATTACK
+    usecase "Déclencher un objet" as OBJECT
+    usecase "Tenter de capturer un Pokémon" as CATCH
+    usecase "Prendre la fuite" as FLEE
 
-    DAMAGES ..> ATTACK : include
+    visiteur --- (POKEDEX)
 
-    OUTCOME ..> DAMAGES : include
+    membre - (START)
+
+    (START) ...> (AUTH) : include
+    (START) -- (BATTLE)
+
+    (LAUNCH) ..> (BATTLE) : include
+    
+    (OBJECT) ..> (LAUNCH) : extends
+    (CATCH) ..> (LAUNCH) : extends
+    (ATTACK) .> (LAUNCH) : extends
+    (FLEE) .> (LAUNCH) : extends
 
 }
 

@@ -4,32 +4,34 @@ left to right direction
 
 actor administrateur
 
-usecase "S'auhetnifier" as AUTH
+rectangle "Administration pokemort" {
+    usecase "S'auhetnifier" as AUTH
 
-usecase "Voir" as VIEW
-usecase "Créer/modifier" as EDIT
-usecase "Supprimer" as DELETE
+    usecase "Voir" as VIEW
+    usecase "Créer/modifier" as EDIT
+    usecase "Supprimer" as DELETE
 
-usecase "Dresseur" as TRAINER
-usecase "Pokemon" as POKEMON
-usecase "Partie" as ADVENTURE
+    usecase "Dresseur" as TRAINER
+    usecase "Pokemon" as POKEMON
+    usecase "Partie" as ADVENTURE
 
-usecase "Dresseur" as TRAINER2
-usecase "Pokemon" as POKEMON2
-usecase "Partie" as ADVENTURE2
+    usecase "Dresseur" as TRAINER2
+    usecase "Pokemon" as POKEMON2
+    usecase "Partie" as ADVENTURE2
 
-usecase "Dresseur" as TRAINER3
-usecase "Pokemon" as POKEMON3
-usecase "Partie" as ADVENTURE3
+    usecase "Dresseur" as TRAINER3
+    usecase "Pokemon" as POKEMON3
+    usecase "Partie" as ADVENTURE3
 
-usecase "Bannir" as BAN
-usecase "Dresseur" as TRAINER4
+    usecase "Bannir" as BAN
+    usecase "Dresseur" as TRAINER4
 
-rectangle "administration pokemort" {
-    administrateur -- AUTH
+    administrateur - AUTH
+    
     EDIT ..> AUTH : include
     VIEW ..> AUTH : include
     DELETE ..> AUTH : include
+
     TRAINER ..> EDIT : extends
     POKEMON ..> EDIT : extends
     ADVENTURE ..> EDIT : extends
