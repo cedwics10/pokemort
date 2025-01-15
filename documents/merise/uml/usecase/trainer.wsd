@@ -5,11 +5,10 @@ skinparam packageStyle rectangle
 actor visiteur
 actor membre
 
-membre --|> visiteur
+membre -|> visiteur
 
 rectangle "POKÉMORT" {
 
-    usecase "S'auhetnifier" as AUTH
     usecase "Demarrrer aventure" as START
     usecase "Consulter la liste des pokémons" as POKEDEX
 
@@ -22,19 +21,19 @@ rectangle "POKÉMORT" {
     usecase "Tenter de capturer un Pokémon" as CATCH
     usecase "Prendre la fuite" as FLEE
 
-    visiteur --- (POKEDEX)
+    visiteur -- (POKEDEX)
 
     membre - (START)
 
-    (START) ...> (AUTH) : include
-    (START) -- (BATTLE)
+    (BATTLE) .>  (START) : include
 
-    (LAUNCH) ..> (BATTLE) : include
+    (LAUNCH) .> (BATTLE) : include
     
+    (FLEE) ..> (LAUNCH) : extends
     (OBJECT) ..> (LAUNCH) : extends
+    (ATTACK) ..> (LAUNCH) : extends
     (CATCH) ..> (LAUNCH) : extends
-    (ATTACK) .> (LAUNCH) : extends
-    (FLEE) .> (LAUNCH) : extends
+
 
 }
 
