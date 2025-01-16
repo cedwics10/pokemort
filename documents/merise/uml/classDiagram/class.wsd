@@ -253,10 +253,9 @@ class ConstituerEquipe {
   +setId(id: int): void
 }
 
-Partie "1,*" -- "1,*" Membre
+Partie "1,*" -- "1,1" Membre
 Partie "1,*" -- "1,*" Badge
 
-Ennemi "1,*" -- "1,*" Pokemon
 Ennemi "1,*" -- "1,1" Strategie
 Ennemi "1,*" -- "0,1" Badge
 Ennemi "1,*" -- "1,*" Objet
@@ -277,13 +276,13 @@ Pokemon "0,1" -- "0,1" Pokemon
 Pokemon "1,*" -- "1,1" Talent
 Personnage "1,*" -- "1,*" Objet
 
-Combattre "1,*" -- "1,2" Pokemon
+Combattre "1,*" -- "1,*" Personnage
 Combattre "1,*" -- "1,1" Climat
 
-Personnage "1,1" -- "1,n" ConstituerEquipe 
-Objet "1,1" -- "1,n" ConstituerEquipe 
-Pokemon "1,1" -- "1,n" ConstituerEquipe 
-Talent "1,1" -- "1,n" ConstituerEquipe 
-Statut "1,1" -- "1,n" ConstituerEquipe 
-Attaque "1,*" -- "1,n" ConstituerEquipe
+Personnage "1,1" -- "1,*" ConstituerEquipe 
+Objet "1,1" -- "1,*" ConstituerEquipe 
+Pokemon "1,1" -- "1,*" ConstituerEquipe 
+Talent "1,1" -- "1,*" ConstituerEquipe 
+Statut "1,1" -- "1,*" ConstituerEquipe 
+Attaque "1,*" -- "1,*" ConstituerEquipe
 @endumld
