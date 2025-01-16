@@ -235,21 +235,22 @@ class Climat {
 }
 
 class Combattre {
-  -id
-  getId() : int
-  setId(int id) : void
+  -id: int
+  +getId(): int
+  +setId(id: int): void
 }
 
 class ConstituerEquipe {
-  -id : int,
-  -statut,
-  -iv_attaque: int,
-  -iv_vitesse: int, 
-  -niveau : int,
-  -pv_restants : int,
-  -ordre : int,
-  -experience : int,
-  -shiny : boolean
+  -id: int
+  -iv_attaque: int
+  -iv_vitesse: int
+  -niveau: int
+  -pv_restants: int
+  -ordre: int
+  -experience: int
+  -shiny: boolean
+  +getId(): int
+  +setId(id: int): void
 }
 
 Partie "1,*" -- "1,*" Membre
@@ -279,14 +280,10 @@ Personnage "1,*" -- "1,*" Objet
 Combattre "1,*" -- "1,2" Pokemon
 Combattre "1,*" -- "1,1" Climat
 
-
 Personnage "1,1" -- "1,n" ConstituerEquipe 
 Objet "1,1" -- "1,n" ConstituerEquipe 
-Pokemon "" -- "1,n" ConstituerEquipe 
-Talent "" -- "1,n" ConstituerEquipe 
-Statut "" -- "1,n" ConstituerEquipe 
-Attaque "" -- "1,n" ConstituerEquipe 
-Attaque "" -- "1,n" ConstituerEquipe 
-Attaque "" -- "1,n" ConstituerEquipe 
-Attaque "" -- "1,n" ConstituerEquipe 
+Pokemon "1,1" -- "1,n" ConstituerEquipe 
+Talent "1,1" -- "1,n" ConstituerEquipe 
+Statut "1,1" -- "1,n" ConstituerEquipe 
+Attaque "1,*" -- "1,n" ConstituerEquipe
 @endumld
