@@ -3,16 +3,12 @@
 -	Type
 -	Badge
 -	Objet
-
 -	Pokemon
 -	Talent
 -	Attaque
--       Priorite
-
+-   Priorite
 -	BaseEffet
 -	Effet
-
 -	Strategie
 -	Ennemi
-
 -	Climat
