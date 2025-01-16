@@ -1,208 +1,254 @@
 @startuml
 
-@startuml
-
-class Membre {
-  +int mem_id
-  +String mem_pseudo
-  +String mem_mdp
-  +String mem_nom
-  +String mem_photo
+class Partie {
+  -id: int
+  -membre: Membre
+  -personnage: Personnage
+  -actif: boolean
+  -score: int
+  -statut: Statut
+  -debut: Date
+  -fin: Date
+  
+  +getId(): int
+  +setId(id: int): void
+  +getMembre(): Membre
+  +setMembre(membre: Membre): void
+  +getPersonnage(): Personnage
+  +setPersonnage(personnage: Personnage): void
+  +getScore(): int
+  +setScore(score: int): void
 }
 
-class Statut {
-  +int sta_id
-  +String sta_nom
+class Membre {
+  -id: int
+  -pseudo: string
+  -mdp: string
+  -nom: string
+  -photo: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getPseudo(): string
+  +setPseudo(pseudo: string): void
+  +getMdp(): string
+  +setMdp(mdp: string): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getPhoto(): string
+  +setPhoto(photo: string): void
 }
 
 class Personnage {
-  +int per_id
-  +String per_nom
-  +String per_photo
-  +boolean per_jouable
-  +int per_copie
+  -id: int
+  -nom: string
+  -photo: string
+  -jouable: boolean
+  -copie: Personnage
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getPhoto(): string
+  +setPhoto(photo: string): void
+  +getJouable(): boolean
+  +setJouable(jouable: boolean): void
+  +getCopie(): Personnage
+  +setCopie(copie: Personnage): void
 }
 
 class Type {
-  +int typ_id
-  +String typ_nom
-  +String typ_logo
+  -id: int
+  -nom: string
+  -logo: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getLogo(): string
+  +setLogo(logo: string): void
 }
 
 class Badge {
-  +int bad_id
-  +int bad_type
-  +int bad_ordre
+  -id: int
+  -type: Type
+  -ordre: int
+  
+  +getId(): int
+  +setId(id: int): void
+  +getType(): Type
+  +setType(type: Type): void
+  +getOrdre(): int
+  +setOrdre(ordre: int): void
 }
 
 class Objet {
-  +int obj_id
-  +String obj_nom
-  +String obj_image
+  -id: int
+  -nom: string
+  -image: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getImage(): string
+  +setImage(image: string): void
+}
+
+class Statut {
+  -id: int
+  -nom: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
 }
 
 class Pokemon {
-  +int pok_id
-  +int pok_numero
-  +String pok_nom
-  +String pok_image
-  +String pok_miniature
-  +int pok_base_pv
-  +int pok_base_attaqie
-  +int pok_base_defense
-  +int pok_base_attaque_speciale
-  +int pok_base_defense_speciale
-  +int pok_base_vitesse
+  -id: int
+  -numero: int
+  -nom: string
+  -miniature: string
+  -base_attaqie: int
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNumero(): int
+  +setNumero(numero: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getMiniature(): string
+  +getBaseAttaque(): int
+  +setBaseAttaque(base_attaqie: int): void
 }
 
 class Talent {
-  +int tal_id
-  +String tal_nom
-  +int tal_fois
+  -id: int
+  -nom: string
+  -fois: int
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getFois(): int
+  +setFois(fois: int): void
 }
 
 class Attaque {
-  +int att_id
-  +String att_nom
-  +int att_puissance
-  +int att_precision
+  -id: int
+  -nom: string
+  -puissance: int
+  -precision: int
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getPuissance(): int
+  +setPuissance(puissance: int): void
+  +getPrecision(): int
+  +setPrecision(precision: int): void
+}
+
+class BaseEffet {
+  -id: int
+  -colonne: string
+  -precision: int
+  -degats: int
+  -affecte_ennemi: boolean
+  -affecte_pokemon: boolean
+  
+  +getId(): int
+  +setId(id: int): void
+  +getColonne(): string
+  +setColonne(colonne: string): void
+  +getPrecision(): int
+  +setPrecision(precision: int): void
+  +getDegats(): int
+  +setDegats(degats: int): void
+  +getAffecteEnnemi(): boolean
+  +setAffecteEnnemi(affecte_ennemi: boolean): void
+  +getAffectePokemon(): boolean
+  +setAffectePokemon(affecte_pokemon: boolean): void
 }
 
 class Effet {
-  +int eff_id
-  +String eff_nom
-  +String eff_description
+  -id: int
+  -nom: string
+  -description: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getDescription(): string
+  +setDescription(description: string): void
 }
 
 class Strategie {
-  +int str_id
-  +String str_nom
+  -id: int
+  -nom: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
 }
 
 class Ennemi {
-  +int enn_id
-  +int enn_ordre
-  +String enn_type
-  +String enn_nom
-  +String enn_phrase_debut
-  +String enn_phrase_victoire
-  +String enn_phrase_defaite
-  +int enn_strategie
-  +int enn_personnage
+  -id: int
+  -ordre: int
+  -type: Type
+  -nom: string
+  -phrase_debut: string
+  -strategie: Strategie
+  -personnage: Personnage
+  
+  +getId(): int
+  +setId(id: int): void
+  +getOrdre(): int
+  +setOrdre(ordre: int): void
+  +getType(): Type
+  +setType(type: Type): void
+  +getNom(): string
+  +setNom(nom: string): void
+  +getPhraseDebut(): string
+  +setPhraseDebut(phrase_debut: string): void
+  +getStrategie(): Strategie
+  +setStrategie(strategie: Strategie): void
+  +getPersonnage(): Personnage
+  +setPersonnage(personnage: Personnage): void
 }
 
 class Climat {
-  +int cli_id
-  +String cli_nom
+  -id: int
+  -nom: string
+  
+  +getId(): int
+  +setId(id: int): void
+  +getNom(): string
+  +setNom(nom: string): void
 }
 
-class Partie {
-  +int par_id
-  +int par_membre
-  +int par_personnage
-  +boolean par_actif
-  +int par_score
-  +int par_statut
-  +Date par_debut
-  +Date par_fin
-}
+Partie "1,*" -- "1,*" Membre
+Partie "1,*" -- "1,*" Badge
 
-class Recompenser {
-  +int rec_id
-  +Date rec_date
-  +int rec_partie
-  +int rec_badge
-}
+Ennemi "1,*" -- "1,*" Pokemon
+Ennemi "1,*" -- "1,1" Strategie
+Ennemi "1,*" -- "0,1" Badge
+Ennemi "1,*" -- "1,*" Objet
+Ennemi "1,*" -- "1,1" Personnage 
 
-class Delivrer {
-  +int del_id
-  +int del_ennemi
-  +int del_badge
-}
+Effet "1,*" -- "1,*" BaseEffet
 
-class Offrir {
-  +int off_id
-  +int off_ennemi
-  +int off_objet
-  +int off_quantite
-}
-
-class Combattre {
-  +int com_id
-  +int com_personnage
-  +int com_ennemi
-  +int com_climat
-}
-
-class SortCombattre {
-  +int sor_id
-  +int sor_effet
-  +int sor_combattre
-  +int sor_duree
-}
-
-class Decomposer {
-  +int dec_id
-  +int dec_effet
-  +int dec_base_effet
-}
-
-class Appliquer {
-  +int app_id
-  +int app_effet
-  +int app_objet
-  +int app_ordre
-}
-
-class Exprimer {
-  +int exp_id
-  +int exp_talent
-  +int exp_effet
-}
-
-class Declencher {
-  +int dec_id
-  +int dec_attaque
-  +int dec_effet
-}
-
-class Engendrer {
-  +int eng_id
-  +int eng_statut
-  +int eng_effet
-}
-
-class Craindre {
-  +int cra_id
-  +int cra_type_un
-  +int cra_type_deux
-  +int cra_effet
-  +String cra_signe
-}
-
-class EtreType {
-  +int etr_id
-  +int etr_pokemon
-  +int etre_type
-}
-
-class PeutApprendre {
-  +int peu_id
-  +int peu_pokemon
-  +int peu_attaque
-  +int peu_niveau
-}
-
-class VAEvoluer {
-  +int vae_id
-  +int vae_niveau
-  +int vae_pokemon
-  +int vae_evolution
-}
-
-class SaitExprimer {
-  +int sai_id
-  +int sai_pokemo
+Effet "1,*" --	"1,*" Talent
+Effet "1,*" -- "1,*" Attaque
+Effet "1,*" -- "1,*" Statut
 
 
-@enduml
+
+@endumld

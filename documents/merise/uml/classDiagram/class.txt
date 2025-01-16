@@ -1,0 +1,212 @@
+Partie
+- id
+- membre
+- personnage
+- actif
+- score
+- statut
+- debut
+- fin
+
+Membre
+- id
+- pseudo
+- mdp
+- nom
+- photo
+
+Personnage
+- id
+- nom
+- photo
+- jouable
+- copie
+
+Type
+- id
+- nom
+- logo
+
+Badge
+- id
+- type
+- ordre
+
+Objet
+- id
+- nom
+- image
+
+Statut
+id
+nom
+
+Pokemon
+- id
+- numero
+- nom
+- image
+- miniature
+- base_pv
+- base_attaqie
+- base_defense
+- base_attaque_speciale
+- base_defense_speciale
+- base_vitesse
+
+Talent
+- id
+- nom
+- fois
+
+Attaque
+- id
+- nom
+- puissance
+- precision
+
+BaseEffet
+- id
+- colonne
+- precision
+- degats
+- affecte_ennemi
+- affecte_pokemon
+
+Effet
+- id
+- nom
+- description
+
+Strategie
+- id
+- nom
+
+Ennemi
+- id
+- ordre
+- type
+- nom
+- phrase_debut
+- phrase_victoire
+- phrase_defaite
+- strategie
+- personnage
+
+Climat
+- id
+- nom
+
+Recompenser
+- id
+- date
+- partie
+- badge
+
+Delivrer
+- id
+- ennemi
+- badge
+
+Ofrrir
+- id
+- ennemi
+- objet
+- quantite
+
+Combattre
+- id
+- personnage
+- ennemi
+- personnage
+- climat
+
+SortCombattre
+- id
+- effet
+- combattre
+- duree
+
+Decomposer
+- id
+- effet
+- base_effet
+
+Appliquer
+- id
+- effet
+- objet
+- ordre
+
+Exprimer
+- id
+- talent
+- effet
+
+Declencher
+- id
+- attaque
+- effet
+
+Engendrer
+- id
+- statut
+- effet
+
+
+
+Craindre
+- id
+- type_un
+- type_deux
+- effet
+- signe
+
+EtreType
+- id
+- pokemon
+- type
+
+PeutApprendre
+- id
+- pokemon
+- attaque
+- niveau
+
+VaEvoluer
+- id
+- niveau
+- pokemon
+- evolution
+
+SaitExprimer
+- id
+- pokemon
+- talent
+
+Detenir
+- id
+- personnage
+- objet
+- quantite
+
+ConstituerEquipe
+- id
+- objet
+- talent
+- statut
+- attaque_un
+- attaque_deux
+- attaque_trois
+- attaque_quatre
+- iv_attaque
+- iv_defense
+- iv_attaque_speciale
+- iv_defense_speciale
+- iv_vitesse, 
+- niveau
+- pv_restants
+- ordre
+- experience
+- shiny
+- personnage
