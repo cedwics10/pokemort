@@ -3,8 +3,7 @@
 class Partie {
   -id: int
   -membre: Membre
-  -personnage: Personnage
-  -actif: boolean
+  -personnage: Personnaged
   -score: int
   -statut: Statut
   -debut: Date
