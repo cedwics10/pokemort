@@ -252,36 +252,36 @@ class ConstituerEquipe {
   +setId(id: int): void
 }
 
-Partie "1,*" -- "1,1" Membre
-Partie "1,*" -- "1,*" Badge
+Partie "1..*" -- "1..1" Membre
+Partie "1..*" -- "1..*" Badge
 
-Ennemi "1,*" -- "1,1" Strategie
-Ennemi "1,*" -- "0,1" Badge
-Ennemi "1,*" -- "1,*" Objet
-Ennemi "1,*" -- "1,1" Personnage 
+Ennemi "1..*" -- "1..1" Strategie
+Ennemi "1..*" -- "0..1" Badge
+Ennemi "1..*" -- "1..*" Objet
+Ennemi "1..*" -- "1..1" Personnage 
 
-Effet "1,*" -- "1,*" BaseEffet
+Effet "1..*" -- "1..*" BaseEffet
 
-Effet "1,*" --	"1,*" Talent
-Effet "1,*" -- "1,*" Attaque
-Effet "1,*" -- "1,*" Statut
+Effet "1..*" --	"1..*" Talent
+Effet "1..*" -- "1..*" Attaque
+Effet "1..*" -- "1..*" Statut
 
-Type "1,*" -- "1,*" Type
+Type "1..*" -- "1..*" Type
 
-Pokemon "1,*" -- "1,*" Type
-Pokemon "1,*" -- "1,*" Attaque
-Pokemon "0,1" -- "0,1" Pokemon
+Pokemon "1..*" -- "1..*" Type
+Pokemon "1..*" -- "1..*" Attaque
+Pokemon "0..1" -- "0..1" Pokemon
 
-Pokemon "1,*" -- "1,1" Talent
-Personnage "1,*" -- "1,*" Objet
+Pokemon "1..*" -- "1..1" Talent
+Personnage "1..*" -- "1..*" Objet
 
-Combattre "1,*" -- "1,*" Personnage
-Combattre "1,*" -- "1,1" Climat
+Combattre "1..*" -- "1..*" Personnage
+Combattre "1..*" -- "1..1" Climat
 
-Personnage "1,1" -- "1,*" ConstituerEquipe 
-Objet "1,1" -- "1,*" ConstituerEquipe 
-Pokemon "1,1" -- "1,*" ConstituerEquipe 
-Talent "1,1" -- "1,*" ConstituerEquipe 
-Statut "1,1" -- "1,*" ConstituerEquipe 
-Attaque "1,*" -- "1,*" ConstituerEquipe
+Personnage "1..1" -- "1..*" ConstituerEquipe 
+Objet "1..1" -- "1..*" ConstituerEquipe 
+Pokemon "1..1" -- "1..*" ConstituerEquipe 
+Talent "1..1" -- "1..*" ConstituerEquipe 
+Statut "1..1" -- "1..*" ConstituerEquipe 
+Attaque "1,*" -- "1..*" ConstituerEquipe
 @endumld
