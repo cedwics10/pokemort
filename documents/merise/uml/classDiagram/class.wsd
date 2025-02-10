@@ -277,6 +277,7 @@ Personnage "1..*" -- "1..*" Objet
 
 Combattre "1..*" -- "1..*" Personnage
 Combattre "1..*" -- "1..1" Climat
+Combattre "1..*" -- "1..1" Effet
 
 Personnage "1..1" -- "1..*" ConstituerEquipe 
 Objet "1..1" -- "1..*" ConstituerEquipe 
