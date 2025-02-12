@@ -1,7 +1,5 @@
-/* import { useState } from 'react'
-import viteLogo from '/vite.svg' 
 
-import '../App.css' */
+import '../design//App.css'
 
 function Index() {
   return (

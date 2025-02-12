@@ -2,12 +2,14 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg' */
 
-import './App.css'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Index from './User/Index/Index';
-import About from './User/About/About';
 
+import Index from './User/Index/Index';
+import About from './user/about/about';
+import Pokedex from './user/pokedex/Pokedex';
+
+import Register from './user/register/register';
+import Start from './user/start/Start';
 
 function App() {
   return (
@@ -16,7 +18,10 @@ function App() {
         <h1>Pokémort</h1>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/test" element={<About />} />
+          <Route path="/apropos" element={<About />} />
+          <Route path="/pokedex" element={<Pokedex />} />
+          <Route path="/inscription" element={<Register />} />
+          <Route path="/start" element={<Start />} />
         </Routes>
       </div>
     </Router>
