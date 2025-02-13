@@ -6,6 +6,9 @@ import TendingGames from '../design/trendingGames/TrendingGames';
 
 import TopCategories from '../design/TopCategories/TopCategories';
 
+import StartGame from '../design/StartGame/startGame';
+
+
 function Index() {
     return (
       <>
@@ -16,6 +19,7 @@ function Index() {
         <Trending />
         <TendingGames />
         <TopCategories />
+        <StartGame />
       </>
       );
   }

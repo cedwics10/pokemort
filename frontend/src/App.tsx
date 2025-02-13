@@ -25,7 +25,6 @@ import Header from './user/design/header/header';
 
 import Footer from './user/design/footer/Footer';
 
-
 function App() {
   return (
     <Router>
