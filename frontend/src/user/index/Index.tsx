@@ -1,8 +1,10 @@
+import MainBanner from '../design/MainBanner/MainBanner';
 
 function Index() {
-  return (
-    <h1>Bienvenu</h1>
-  );
-}
-
+    return ( 
+    <>
+      <MainBanner /> {/* Create a markup */ }
+      
+    </> );
+  }
 export default Index;

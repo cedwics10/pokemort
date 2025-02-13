@@ -23,20 +23,31 @@ import Start from './user/start/Start';
 import Head from './user/design/head/head';
 import Header from './user/design/header/header';
 
+import Footer from './user/design/footer/Footer';
+
+
 function App() {
   return (
     <Router>
       <html>
-        <Head />
-        <Header />
-        <h1 className="">Pokémort</h1>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/apropos" element={<About />} />
-          <Route path="/pokedex" element={<Pokedex />} />
-          <Route path="/inscription" element={<Register />} />
-          <Route path="/start" element={<Start />} />
-        </Routes>
+        <head>
+          <Head />
+        </head>
+        <body>
+          <header className="header-area header-sticky">
+            <Header />
+          </header>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/apropos" element={<About />} />
+            <Route path="/pokedex" element={<Pokedex />} />
+            <Route path="/inscription" element={<Register />} />
+            <Route path="/start" element={<Start />} />
+          </Routes>
+          <footer>
+            <Footer />
+          </footer>
+          </body>
       </html>
     </Router>
   );
