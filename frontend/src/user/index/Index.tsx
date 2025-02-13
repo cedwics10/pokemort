@@ -2,7 +2,9 @@ import MainBanner from '../design/MainBanner/MainBanner';
 import Container from '../design/container/Container'
 
 import Trending from '../design/trending/Trending';
+import TendingGames from '../design/trendingGames/TrendingGames';
 
+import TopCategories from '../design/TopCategories/TopCategories';
 
 function Index() {
     return (
@@ -12,6 +14,8 @@ function Index() {
           <Container />
         </div>
         <Trending />
+        <TendingGames />
+        <TopCategories />
       </>
       );
   }

@@ -1,7 +1,7 @@
 
-function mainBanner()
+function Default()
 {
     return (<></>);
 }
 
-export default  mainBanner;
+export default Default;
