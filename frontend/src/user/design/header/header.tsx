@@ -1,28 +1,31 @@
-
-
-import '../fontawesome.css';
-import '../templatemo-lugx-gaming.css';
-import '../owl.css';
-import '../animate.css';
-
-import '../flex-slider.css'
-
-
-
-/*
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-*/
+import Logo from '../images/logo.png';
 
 function header() {
-  return <>
-        <head>
-          <title>Lugx Gaming Shop HTML5 Template</title>
-          <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        </head>
-    </>;
+  return  <>
+          <header className="header-area header-sticky">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                      <nav className="main-nav">
+                                <a href='index.html' className="logo">
+                                    <img src={Logo} alt="" style={{"width" : "158px"}} />
+                                </a>
+                        <ul className="nav">
+                          <li><a href="index.html" className="active">Accueil</a></li>
+                          <li><a href="shop.html">Pokédex</a></li>
+                          <li><a href="product-details.html">Démarrer le jeu</a></li>
+                          <li><a href="contact.html">Nous contacter</a></li>
+                          <li><a href="#">Se connecter</a></li>
+                        </ul>
+                        <a className='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </>;
 }
 
-                      export default header;
+export default header;
