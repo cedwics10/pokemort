@@ -1,3 +1,9 @@
+import Image1 from '../images/featured-01.png';
+import Image2 from '../images/featured-02.png';
+import Image3 from '../images/featured-03.png';
+import Image4 from '../images/featured-04.png';
+
+
 function Container() {
     return (<>
         <div className="container">
@@ -8,7 +14,7 @@ function Container() {
                             <div className="image">
                                 <img
                                     alt=""
-                                    src="images/featured-01.png"
+                                    src={Image1}
                                     style={{
                                         maxWidth: "44px",
                                     }}
@@ -24,7 +30,7 @@ function Container() {
                             <div className="image">
                                 <img
                                     alt=""
-                                    src="images/featured-02.png"
+                                    src={Image2}
                                     style={{
                                         maxWidth: "44px",
                                     }}
@@ -40,7 +46,7 @@ function Container() {
                             <div className="image">
                                 <img
                                     alt=""
-                                    src="images/featured-03.png"
+                                    src={Image3}
                                     style={{
                                         maxWidth: "44px",
                                     }}
@@ -56,7 +62,7 @@ function Container() {
                             <div className="image">
                                 <img
                                     alt=""
-                                    src="images/featured-04.png"
+                                    src={Image4}
                                     style={{
                                         maxWidth: "44px",
                                     }}

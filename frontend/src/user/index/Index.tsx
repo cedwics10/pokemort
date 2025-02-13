@@ -1,6 +1,9 @@
 import MainBanner from '../design/MainBanner/MainBanner';
 import Container from '../design/container/Container'
 
+import Trending from '../design/trending/Trending';
+
+
 function Index() {
     return (
       <>
@@ -8,6 +11,7 @@ function Index() {
         <div className="features">
           <Container />
         </div>
+        <Trending />
       </>
       );
   }

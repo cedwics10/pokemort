@@ -8,7 +8,7 @@ function header() {
     <div className="col-12">
       <nav className="main-nav">
         {/* ***** Logo Start ***** */}
-        <a href="index.html" className="logo">
+        <a href="/" className="logo">
           { /* *** Image à loder *** */}
           <img src={Logo} alt="" style={{width: '158px'}} />
         </a>
