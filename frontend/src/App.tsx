@@ -47,7 +47,7 @@ function App() {
           <footer>
             <Footer />
           </footer>
-          </body>
+        </body>
       </html>
     </Router>
   );

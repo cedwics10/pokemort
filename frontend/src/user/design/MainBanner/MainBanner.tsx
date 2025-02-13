@@ -1,3 +1,5 @@
+import BannerImage from '../images/banner-image.jpg';
+
 
 function MainBanner()
 {
@@ -21,7 +23,7 @@ function MainBanner()
             </div>
             <div className="col-lg-4 offset-lg-2">
               <div className="right-image">
-                <img src="assets/images/banner-image.jpg" alt="" />
+                <img src={BannerImage} alt="" />
                 <span className="price"><a href="" style={{color: 'white'}}>COMMENCER</a></span>
               </div>
             </div>
