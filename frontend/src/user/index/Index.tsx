@@ -12,7 +12,7 @@ import StartGame from '../design/StartGame/startGame';
 function Index() {
     return (
       <>
-        <MainBanner /> {/* Create a markup */}
+        <MainBanner title="Bienvenu sur PokéMort" punchline="BEST GAMING SITE EVER!" />
         <div className="features">
           <Container />
         </div>

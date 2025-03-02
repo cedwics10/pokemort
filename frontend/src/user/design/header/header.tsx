@@ -9,7 +9,7 @@ function header() {
       <nav className="main-nav">
         {/* ***** Logo Start ***** */}
         <a href="/" className="logo">
-          { /* *** Image à loder *** */}
+          { /* *** Image to load *** */}
           <img src={Logo} alt="" style={{width: '158px'}} />
         </a>
         {/* ***** Logo End ***** */}

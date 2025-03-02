@@ -1,0 +1,46 @@
+- Finish to adapt all the templates to a React format
+- Finish to turn the Pokedex into a react version
+- Finish to adapt the battle template
+- Add some new interfaces
+
+(Before March 1st)
+
+- Write all the sequences for the backend project,
+for each use case
+
+(Before March 8th)
+
+- Write all the queries on the backend
+
+- Create a ViewModel generator to help creating them
+
+- Create all the routes of the Model with the generator
+- Create all he routes of the ViewModel with the generator
+
+- Create all unit tests for the models (mock database ?)
+- Create some unit tests for the ViewModel (mock database ?)
+- Edit the models
+
+(1st April)
+
+- Start designing the controller classes for the projet
+
+- Mind about all the design patterns
+- Mount all the classes between themselves,
+using all what you had
+
+(1st may)
+
+- Connect the backend to the frontend, with
+an asynchronous connection
+- Add frontend test with React
+
+(1st June)
+
+- Write documentation about the game
+- Correct last unit tests
+
+(1st July)
+
+- Do a mise en prod (?)
+(1st August)
