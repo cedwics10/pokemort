@@ -1,6 +1,6 @@
 import React from "react";
-import PokedexHeader from "../components/pokedex/PokedexHeader";
-import PokedexSidebar from "../components/pokedex/PokedexSidebar";
+import PokedexHeader from "../components/pokedex/PokedexHeader.tsx";
+import PokedexSidebar from "../components/pokedex/PokedexSidebar.tsx";
 
 const PokedexLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

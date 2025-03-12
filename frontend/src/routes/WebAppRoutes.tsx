@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import WebAppLayout from "../layouts/WebAppLayout";
-/* import Home from "../pages/webapp/Home";
-import About from "../pages/webapp/About"; */
+import Home from "../pages/webapp/Home";
+import About from "../pages/webapp/About";
 
 const WebAppRoutes: React.FC = () => {
   return (

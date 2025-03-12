@@ -1,8 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-/* import PokedexLayout from "../layouts/PokedexLayout";
-import List from "../pages/pokedex/List";
-import Details from "../pages/pokedex/Details"; */
+
+import PokedexLayout from "../layouts/PokedexLayout.tsx";
+import List from "../pages/pokedex/List.tsx";
+import Details from "../pages/pokedex/Details.tsx";
 
 const PokedexRoutes: React.FC = () => {
   return (
