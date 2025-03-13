@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const WebAppHeader: React.FC = () => {
+const WebAppHeader: React.FC<{ pageName?: string }> = ({ pageName = "My WebApp" }) => {
   return (
     <header className="webapp-header">
       <div className="logo">
-        <h1>My WebApp</h1>
+        <h1>{pageName}</h1>
       </div>
       <nav className="nav">
         <ul>
