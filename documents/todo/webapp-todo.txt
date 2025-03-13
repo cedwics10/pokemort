@@ -1,0 +1,8 @@
+Page à convertir en composant :
+- Index
+- DemarrerPartie (ProductDetails)
+- Contact (ContactUs)
+- APropos (About)
+- Liste des Pokémons (PokemonList) => (Shop)
+- SignIn (trouver un tempate pour cela)
+- Login
