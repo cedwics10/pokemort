@@ -5,19 +5,43 @@ actor Visitor
 participant "Front" as Front
 participant "Service" as ServicePartie
 participant "PartieController" as PartieCtrl
-participant "ViewModelPartie" as DaoViewPartie
+
+participant "Session" as Session
+
+participant "Dao partie" as PartieDao
+
+participant "ViewPartie" as ViewPartie
+
+participant "DAO ViewPartie" as DaoViewPartie
+
+participant "Membre" as Membre
 
 
 Visitor -> Front : PartiePage()
-Front --> Visitor : shows the starting Partie page
+Front --> Visitor : shows the starting partie page form
+Visitor -> Front : sendData()
+Front --> Visitor : all data are valid to start the game
 Visitor -> Front : startPartie()
 Front -> ServicePartie : initializePartie()
-ServicePartie -> PartieCtrl : doPost(userId)
-group Start Intiialize
-PartieCtrl -> DaoViewPartie : create(userId)
-DaoViewPartie -> DaoViewPartie : new ViewPartie
-DaoViewPartie -> PokemonDao : obtenirStarter()
-PokemonDao --> PartieCtrl : retourner un pikachu niveau 5
-DaoViewPartie --> DaoViewPartie  : sendsAnswer() 
-end
+ServicePartie -> PartieCtrl : doGet()
+group Start Succesfull initialization
+PartieCtrl -> Session : checkConnection()
+Session --> PartieCtrl : user is connected into the page
+PartieCtrl -> PartieDao : somethingInProgres()
+PartieDao --> PartieCtrl : no battle is in progress
+PartieCtrl -> DaoViewPartie : new ViewPartie() 
+DaoViewPartie --> PartieCtrl : object partie
+
+PartieCtrl -> DaoMembre : getMembre(idMembre)
+DaoMembre --> PartieCtrl : return all data about member
+PartieCtrl -> Partie : setMembre(Membre object)
+Partie --> PartieCtrl  : ok
+
+PartieCtrl -> PersonnageDao : new DaoPersonnage()->createDefaultChaaracter()
+PersonnageDao --> PartieCtrl : sends back the new personnage
+PartieCtrl -> Partie : setPersonnage(Personnage personnage)
+Partie --> PartieCtrl  : character of the member is well intiialized
+
+
+
 @enduml
