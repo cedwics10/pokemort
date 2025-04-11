@@ -1,0 +1,33 @@
+@startuml
+title Pokémort - Démarrer l'aventure
+
+actor Visitor
+participant "Front" as Front
+participant "Service" as ServiceUtilisateur
+
+participant "ConnectionController" as UtilisateurCtrl
+
+participant "CheckData" as CheckData
+participant "DaoUtilisateur" as DaoUtilisateur
+
+
+Visitor -> Front : connection()
+Front --> Visitor : shows the connection page
+Visitor -> Front : sendForm()
+Front -> ServiceUtilisateur : sendDataConnection()
+ServiceUtilisateur -> UtilisateurCtrl : doPost(dataUser)
+group Success
+UtilisateurCtrl -> UtilisateurCtrl : formatData(dataUser)
+UtilisateurCtrl -> DaoUtilisateur : isUserExisting()
+DaoUtilisateur --> UtilisateurCtrl : send the existence of the user
+UtilisateurCtrl -> CheckData : checkPassword(dataUser)
+CheckData --> UtilisateurCtrl : password and username matches
+UtilisateurCtrl -> ServiceUtilisateur  : retrns the error message or requires redirection
+UtilisateurCtrl -> DaoUtilisateur : connect(userData)
+UtilisateurCtrl -> Session : createToken() 
+Session --> UtilisateurCtrl : user is actually connected
+UtilisateurCtrl --> ServiceUtilisateur : orders redirection
+ServiceUtilisateur --> Front : Error 302
+Front --> Visitor : go to the page of options
+end
+@enduml
