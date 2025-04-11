@@ -3,24 +3,49 @@ title Pokémort - Démarrer l'aventure
 
 actor Visitor
 participant "Front" as Front
-participant "Service" as ServiceConnection
-participant "ConnectionController" as ConnectCtrl
+participant "Service" as ServiceUtilisateur
+
+participant "ConnectionController" as UtilisateurCtrl
+
 participant "CheckData" as CheckData
-participant "DaoConnection" as InscDao
+participant "DaoUtilisateur" as DaoUtilisateur
+
 
 Visitor -> Front : connection()
+Front -> ServiceUtilisateur : connectionPage()
+ServiceUtilisateur -> UtilisateurCtrl : doGet()
+UtilisateurCtrl -> Session : isUserConnected()
+Session --> UtilisateurCtrl : he is already connected, send a return
+UtilisateurCtrl -> Session : isThereErrorMessage()
+Session --> UtilisateurCtrl : yes, a message error exists, it can be shown
+Session --> UtilisateurCtrl : User is already connected
+UtilisateurCtrl --> ServiceUtilisateur : show the page, whatever
+ServiceUtilisateur --> Front : whatever, but every error are printed or redirection for already connected usersd
 Front --> Visitor : shows the connection page
 Visitor -> Front : sendForm()
-Front -> ServiceConnection : sendDataConnection()
-ServiceConnection -> ConnectCtrl : doPost(dataUser)
-group Checking
-ConnectCtrl -> ConnectCtrl : formatData(dataUser)
-ConnectCtrl -> CheckData : checkData(dataUser)
-CheckData --> ConnectCtrl : positive or negative answer
-ConnectCtrl -> DaoConnection : isUserExisting()
-DaoConnection -> ConnectCtrl : send the existence of the user
-ConnectCtrl -> ServiceConnection  : retrns the error message or requires redirection
-ServiceConnection -> Front : prints message
-Front -> Visitor : reads message
+Front -> ServiceUtilisateur : sendDataConnection()
+ServiceUtilisateur -> UtilisateurCtrl : doPost(dataUser)
+group Failure
+UtilisateurCtrl -> UtilisateurCtrl : formatData(dataUser)
+UtilisateurCtrl -> DaoUtilisateur : isUserExisting()
+DaoUtilisateur --> UtilisateurCtrl : non existenc of the user
+UtilisateurCtrl -> Session : setErrorMessage()
+Session --> UtilisateurCtrl : error object is store into the session 
+UtilisateurCtrl -> Session : isAlreadyConnected()
+Session --> UtilisateurCtrl : error object is stored into the session
+UtilisateurCtrl -> CheckData : checkPassword(dataUser)
+CheckData --> UtilisateurCtrl : or password and username don't match
+UtilisateurCtrl -> Session : setErrorMessage()
+Session --> UtilisateurCtrl : error object is store into the session 
+UtilisateurCtrl -> ServiceUtilisateur : retrns the error message or requires redirection
+UtilisateurCtrl --> ServiceUtilisateur : orders redirection
+ServiceUtilisateur --> Front : refresh the page
+Front -> UtilisateurCtrl : doGet()
+UtilisateurCtrl -> Sessesion : checkForMistakes()
+Session --> UtilisateurCtrl : returns the message to show
+UtilisateurCtrl  --> Service : returns the JSON mistakes
+Service --> Front : sends the JSON of errors too 
+Front --> Visitor : the user views what gets wrong
+
 end
 @enduml
