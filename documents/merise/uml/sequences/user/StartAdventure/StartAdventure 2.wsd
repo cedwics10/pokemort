@@ -1,0 +1,22 @@
+@startuml
+title Pokémort - Démarrer une partie (details partie)
+
+group Create details personnage
+PartieCtrl -> DaoMembre : getMembre(idMembre)
+DaoMembre --> PartieCtrl : return all data about member
+PartieCtrl -> Partie : setMembre(Membre membre)
+Partie --> PartieCtrl  : ok
+
+PartieCtrl -> EnnemiDao : getId(1)
+EnnemiDao -> PartieCtrl : Retourne le premier ennemi à déglinguer
+
+PartieCtrl -> Partie : setEnnemi()
+Partie --> PartieCtrl : ok
+
+PartieCtrl -> Partie : setNumeroEnnemi(1)
+Partie --> PartieCtrl : ok
+
+
+
+end
+@enduml

@@ -1,5 +1,5 @@
 @startuml
-title Pokémort - Démarrer une partie
+title Pokémort - Démarrer une partie ()
 
 actor Visitor
 participant "Front" as Front
@@ -52,7 +52,14 @@ Partie --> PartieCtrl  : character of the partie is well intiialized
 
 PartieCtrl  -> ConstituerEquipeDao : getDefault() 
 ConstituerEquipeDao --> PartieCtrl : statistiques de base d'un pokémon 
+
+PartieCtrl -> Partie : setEquipe(ConstituerEquipe Equipe)
+Partie --> PartieCtrl  : équipe du joueur bien initialisé
+
+PartieCtrl -> ConstituerEquipeDao : getNextOpponent(Partie->getCurrentEnnemi())
+ConstituerEquipe --> PartieCtrl : ArrayList de tous les ConstituerEquipe de l'ennemi
+
+PartieCtrl -> Partie : setEnnemi(Ennemi ennemi)
+Partie --> PartieCtrl  : équipe  de l'ennemi bien init
 end
-
-
 @enduml

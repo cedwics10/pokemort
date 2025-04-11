@@ -1,0 +1,34 @@
+@startuml
+title Pokémort - Initialisation d'un ennemi
+
+group Lorsqu'un ennemi est initialisé
+
+actor "Initialiseur" as Init
+
+Init -> EnnemiDao : getById(id)
+EnnemiDao -> Ennemi : new Ennemi()
+EnnemiDao -> Database : prepare + execute safely
+Database --> EnnemiDao : Données de base de l'ennemi
+
+EnnemiDao -> Ennemi : setBaseData(baseData)
+Ennemi --> EnnemiDao : Ennemi initialisé
+
+EnnemiDao -> ConstituerEquipeDao : getAllByEnnemi() 
+
+ConstituerEquipeDao -> ConstituerEquipeDao : query to get all pokemon perso info by ennemis
+
+ConstituerEquipeDao -> PokemonDao : getFromEnnemi(listeIds)
+PokemonDao --> ConstituerEquipeDao : Liste de Pokémon
+
+ConstituerEquipeDao -> ConstituerEquipe : new ArrayList()
+ConstituerEquipeDao -> ConstituerEquipe : addMatchingPoke(num corr, num pok)
+ConstituerEquipe --> ConstituerEquipeDao : ArrayList constitué
+
+ConstituerEquipeDao -> EnnemiDao : retourner equipeEnnemi
+EnnemiDao -> Ennemi : setEquipe(le tableau avec tout)
+
+EnnemiDao -> Init : the ennemy with details (person + poke opponents)
+
+
+end
+@enduml
