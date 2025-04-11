@@ -1,0 +1,46 @@
+@startuml
+title Pokémort - S'inscrire à l'aventure (échec)
+
+actor Visitor
+
+participant "Front" as Front
+participant "Service" as ServiceUtilisateur
+participant "RegisterController" as InscCtrl
+
+participant "CheckData" as CheckData
+
+participant "UtilisateurDao" as UserDao
+
+Visitor -> Front : register()
+Front --> Visitor : shows register page
+Visitor -> Front :  sendsForm()
+Front -> ServiceUtilisateur : sendDataInscirption(data)
+ServiceUtilisateur -> InscCtrl : doPost(data)
+group Registeration failure
+InscCtrl -> CheckData : formatData(dataUser)
+CheckData --> InscCtrl : got trimmed data
+InscCtrl -> CheckData : checkData(dataUser)
+CheckData --> InscCtrl : all data are invalid
+InscCtrl -> UserDao : isUserExists()
+UserDao --> InscCtrl : user already exists
+InscCtrl -> InscCtrl : data are all invalid
+InscCtrl -> ServiceUtilisateur : error message is returned
+ServiceUtilisateur -> Front : prints message of failure with some details
+Front -> Visitor : redirection to the main page, connected
+end
+
+/'
+Ci-dessous, une section de commentaire désactivée pour référence future :
+
+Alice -> Tool : Click and drag to create a request\nor type it in the source area to the left
+Tool -> Bob : Send request
+Bob --> Alice : Acknowledge request\n(drag to move note over Bob)
+
+note over Bob
+Double click to edit text\nClick Help menu for **instructions** and **examples**
+end note
+
+Bob -> Help : Double click to edit text\nnon-instantaneous message
+'/
+
+@enduml

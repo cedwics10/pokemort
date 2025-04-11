@@ -1,0 +1,23 @@
+@startuml
+title Pokémort - Démarrer une partie
+
+actor Visitor
+participant "Front" as Front
+participant "Service" as ServicePartie
+participant "PartieController" as PartieCtrl
+participant "ViewModelPartie" as DaoViewPartie
+
+
+Visitor -> Front : PartiePage()
+Front --> Visitor : shows the starting Partie page
+Visitor -> Front : startPartie()
+Front -> ServicePartie : initializePartie()
+ServicePartie -> PartieCtrl : doPost(userId)
+group Start Intiialize
+PartieCtrl -> DaoViewPartie : create(userId)
+DaoViewPartie -> DaoViewPartie : new ViewPartie
+DaoViewPartie -> PokemonDao : obtenirStarter()
+PokemonDao --> PartieCtrl : retourner un pikachu niveau 5
+DaoViewPartie --> DaoViewPartie  : sendsAnswer() 
+end
+@enduml

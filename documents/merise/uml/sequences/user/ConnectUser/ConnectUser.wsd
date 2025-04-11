@@ -1,0 +1,26 @@
+@startuml
+title Pokémort - Démarrer l'aventure
+
+actor Visitor
+participant "Front" as Front
+participant "Service" as ServiceConnection
+participant "ConnectionController" as ConnectCtrl
+participant "CheckData" as CheckData
+participant "DaoConnection" as InscDao
+
+Visitor -> Front : connection()
+Front --> Visitor : shows the connection page
+Visitor -> Front : sendForm()
+Front -> ServiceConnection : sendDataConnection()
+ServiceConnection -> ConnectCtrl : doPost(dataUser)
+group Checking
+ConnectCtrl -> ConnectCtrl : formatData(dataUser)
+ConnectCtrl -> CheckData : checkData(dataUser)
+CheckData --> ConnectCtrl : positive or negative answer
+ConnectCtrl -> DaoConnection : isUserExisting()
+DaoConnection -> ConnectCtrl : send the existence of the user
+ConnectCtrl -> ServiceConnection  : retrns the error message or requires redirection
+ServiceConnection -> Front : prints message
+Front -> Visitor : reads message
+end
+@enduml

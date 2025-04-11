@@ -1,0 +1,49 @@
+@startuml
+title Pokémort - Démarrer l'aventure
+
+actor Visitor
+
+participant "Front" as Front
+participant "Service" as ServiceUtilisateur
+participant "RegisterController" as InscCtrl
+
+participant "CheckData" as CheckData
+
+participant "Utilisateur" as User
+participant "UtilisateurDao" as UserDao
+
+Visitor -> Front : register()
+Front --> Visitor : shows register page
+Visitor -> Front :  sendsForm()
+Front -> ServiceUtilisateur : sendDataInscirption(data)
+ServiceUtilisateur -> InscCtrl : doPost(data)
+group Successful registeration
+InscCtrl -> CheckData : formatData(dataUser)
+CheckData --> InscCtrl : got trimmed data
+InscCtrl -> CheckData : checkData(dataUser)
+CheckData --> InscCtrl : checks if data are valid
+InscCtrl -> UserDao : isUserNotExists()
+UserDao --> InscCtrl : return if user actually exists
+InscCtrl -> InscCtrl : new user + setValues()
+InscCtrl -> DaoInscrisption : insert(User)
+DaoInscrisption -> InscCtrl : new Utilisateur(id)
+InscCtrl -> ServiceUtilisateur : user is connected : all data
+ServiceUtilisateur -> Front : prints message of success
+Front -> Visitor : redirection to the main page, connected
+end
+
+/'
+Ci-dessous, une section de commentaire désactivée pour référence future :
+
+Alice -> Tool : Click and drag to create a request\nor type it in the source area to the left
+Tool -> Bob : Send request
+Bob --> Alice : Acknowledge request\n(drag to move note over Bob)
+
+note over Bob
+Double click to edit text\nClick Help menu for **instructions** and **examples**
+end note
+
+Bob -> Help : Double click to edit text\nnon-instantaneous message
+'/
+
+@enduml
