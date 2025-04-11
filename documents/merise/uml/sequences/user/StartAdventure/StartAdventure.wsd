@@ -29,19 +29,30 @@ PartieCtrl -> Session : checkConnection()
 Session --> PartieCtrl : user is connected into the page
 PartieCtrl -> PartieDao : somethingInProgres()
 PartieDao --> PartieCtrl : no battle is in progress
+end
+
+group Create VM Partie
 PartieCtrl -> DaoViewPartie : new ViewPartie() 
 DaoViewPartie --> PartieCtrl : object partie
+end
 
+
+group Create embed Personnage
 PartieCtrl -> DaoMembre : getMembre(idMembre)
 DaoMembre --> PartieCtrl : return all data about member
 PartieCtrl -> Partie : setMembre(Membre object)
 Partie --> PartieCtrl  : ok
 
-PartieCtrl -> PersonnageDao : new DaoPersonnage()->createDefaultChaaracter()
+PartieCtrl -> ViewPersonnageDao : new DaoPersonnage()->createDefaultChaaracter()
+ViewPersonnageDao -> Personnage : new Personnage()
+Personnage --> PersonnageDao : 
 PersonnageDao --> PartieCtrl : sends back the new personnage
 PartieCtrl -> Partie : setPersonnage(Personnage personnage)
-Partie --> PartieCtrl  : character of the member is well intiialized
+Partie --> PartieCtrl  : character of the partie is well intiialized
 
+PartieCtrl  -> ConstituerEquipeDao : getDefault() 
+ConstituerEquipeDao --> PartieCtrl : statistiques de base d'un pokémon 
+end
 
 
 @enduml

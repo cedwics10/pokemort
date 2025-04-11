@@ -1,0 +1,3 @@
+Une partie est joué par un membre qui incarne un personnage
+le personnage constitue une équipe de pokémons
+Les pokémons ont leur propre talent
